@@ -20,7 +20,7 @@ def proxy():
 def webhook(activity):
     try:
         webhook = DiscordWebhook(url='')
-        embed = DiscordEmbed(title='Aramex Tracking', description='`New Activity`', url='https://www.aramex.com/au/en/track/results?ShipmentNumber=34151885460', color=0x000000)
+        embed = DiscordEmbed(title='Aramex Tracking', description='`New Activity`', url='https://www.aramex.com/au/en/track/results?ShipmentNumber=', color=0x000000)
         for datatype in activity.find_all('td'):
             if datatype.attrs['data-heading'] == 'Date':
                 embed.add_embed_field(name='**Time**', value=datatype.text.strip(), inline=False)
